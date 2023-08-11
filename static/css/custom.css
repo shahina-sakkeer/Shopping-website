@@ -1,0 +1,147 @@
+body{
+    font-family: 'Manrope', sans-serif;
+}
+.nav-item{
+    letter-spacing: 0.2em;
+    font-size: 16px;
+    text-transform: uppercase;
+    
+}
+
+.nav-item :hover{
+    transform: scale(1.05);
+}
+
+.dropdown-item{
+    letter-spacing: 0.2em;
+    font-size: 16px;
+    text-transform: uppercase;
+}
+
+.my_footer{
+    background-color: rgb(245, 167, 139);
+    height: 100px;
+}
+
+.my_footer p{
+    font-weight: bold;
+    padding-top: 40px;
+    width: 100%;
+}
+
+
+/* category */
+
+.my_row_class{
+    padding-top: 20px;
+}
+
+.mx_auto{
+    color: black;
+    font-size: 17px;
+}
+
+.my_image{
+    width: 100%;
+    height: 500px;
+}
+
+.my_title{
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    font-size: 20px;
+    font-weight: bold; 
+    margin-top: 20px;
+}
+
+.my_image_padding{
+    padding: 5px;
+}
+
+.my_bottom_margin{
+    margin-bottom: 10px;
+}
+
+.card-body h4 {
+    font-size: 16px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.card-body p {
+    letter-spacing: 0.1em;
+
+}
+
+/* product */
+
+.my_prod_row_class{
+    padding-top: 15px;
+    padding-bottom: 20px;
+}
+
+.my_prod_row_class .mx_auto{
+    color: black;
+    font-size: 15px;
+    text-decoration: none;
+}
+
+.my_prod_title{
+    font-size: 24px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-weight: bolder;
+    padding-top: 15px;
+    padding-bottom: 20px;
+}
+
+.my_price{
+    font-weight: bolder;
+    color: red;
+    font-size: 17px;
+}
+
+.my_prod_text{
+    line-height: 25px;
+}
+
+.my_prod_stock{
+    color: red;
+    font-weight: bolder;
+}
+
+/* search */
+
+.my_search_text{
+    padding-top: 20px;
+}
+
+/* cart */
+
+.custom_table{
+    min-width: 400px;
+    font-size: 14px;
+}
+
+.custom_head{
+    font-weight: normal;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    background-color: chocolate;
+}
+
+.custom_a{
+    text-decoration: none;
+}
+
+.custom_icon{
+    text-decoration: none;
+    color: #868e96;
+}
+
+.custom_button{
+    margin-top: 5px;
+}
+
+

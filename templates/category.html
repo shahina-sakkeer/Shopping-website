@@ -1,0 +1,90 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+
+{% if category %}
+{{category.name}} - Beauty BeautyFinds
+{% else %}
+See our new collections
+{% endif %}
+
+{% endblock %}
+
+
+{% block body %}
+
+
+{% if category%}
+<div>
+    <div class="my_row_class">
+        <div class="mx_auto">
+            <p>
+                <a href="{% url 'shop:alllist' %}" style="text-decoration: none; color: brown; font-weight: bolder;">Our Product Collections</a>
+            </p>
+        </div>
+    </div>
+</div>
+{% endif %}
+
+<div class="mx_auto">
+    {% if category %}
+    <div>
+        <img class="my_image" src="{{category.image.url}}" alt="">
+    </div>
+    <div>
+        <h1 class="text-center my_title">{{category.name}}</h1>
+        <p class="text-justify">{{category.description}}</p>
+    </div><hr>
+    {% else %}
+    <div>
+        <img class="my_image my_image_padding" src="{% static 'images/banner.png' %}" alt="" width="100%"
+            height="500px">
+    </div>
+    <div>
+        <h1 class="text-center my_title">Products are now on sale</h1><hr>
+        <p class="text-justify" style="font-weight: bolder; color: rgb(228, 126, 89);">
+            "Welcome to BeautyFinds, your ultimate destination for radiant and flawless skin! We are thrilled to bring you a carefully curated collection of top-notch skincare products and expert advice that will transform your skincare routine into a luxurious and rejuvenating experience"
+            <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            "Thank you for joining us on this radiant adventure. Let's embark on a transformative skincare experience together!"
+        </p><hr>
+    </div>
+    {% endif %}
+</div>
+
+<div class="container">
+    <div class="row mx_auto">
+        {% for product in products.object_list %}
+        <div class="row my_bottom_margin col-9 col-sm-12 col-md-4">
+            <div class="card text-center" style="min-width: 18rem;">
+                <a href="{{product.get_url}}"><img class="card-image-top" src="{{product.image.url}}" alt=""></a>
+
+
+                <div class="card-body">
+                    <h4>{{product.name}}</h4>
+                    <p>Rs.{{product.price}}</p>
+                </div>
+
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    <div class="mx_auto">
+        {% if products.paginator.num_pages > 1 %}
+
+        <hr>
+        <div class="text-center">
+            {% for pg in products.paginator.page_range %}
+            <a href="?page={{pg}}" class="btn btn-light btn-sm {% if products.number == pg %} active {% endif %}" >{{pg}}</a>
+            {% endfor %}
+        </div>
+        {% endif %} 
+    </div>
+    <br>
+</div>
+
+
+
+{% endblock %}
+
+<!-- col-lg-4 -->

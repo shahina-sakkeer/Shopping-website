@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+
+{% if category %}
+{{product.name}} - Beauty BeautyFinds
+{% endif %}
+
+{% endblock %}
+
+
+{% block body %}
+
+<div class="row my_prod_row_class">
+    <div class="mx_auto">
+        <p>
+            <a href="{% url 'shop:alllist' %}" style="text-decoration: none; color: rgb(228, 126, 89);">Home</a>  |
+            <a href="{{product.category.get_url}}" style="text-decoration: none; color: rgb(228, 126, 89);">{{product.category}}</a>  |
+            {{product.name}}
+        </p>
+    </div>
+    <div class="container">
+        <br>
+        <div class="row">
+            <div class="col-12 col-sm-12 col-md-12 col-lg-6 text-center mt-5">
+                <div class="min-width:18rem">
+                    <img src="{{product.image.url}}" alt="">
+                </div>
+            </div><br>
+            
+                <div class="col-12 col-sm-12 col-md-12 col-lg-6">
+                    <div>
+                    <h2 class="my_prod_title">{{product.name}}</h2>
+                    <p class="my_price">Rs. {{product.price}}</p>
+                    <h3 class="my_title">Product Description</h3>
+                    <p class="text-justify my_prod_text">{{product.description}}</p>
+
+                    {% if product.stock <= 0 %} <p class="text-justify my_prod_stock "><b>Out of Stock</b></p>
+                        {% else %}
+                        <a href="{% url 'cart:add_cart' product.id %}" class="btn btn-success">Add to cart</a>
+                        {% endif %}
+
+                </div>
+            </div>    
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}
