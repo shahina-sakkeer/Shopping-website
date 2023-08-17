@@ -1,5 +1,6 @@
 body{
     font-family: 'Manrope', sans-serif;
+    
 }
 .nav-item{
     letter-spacing: 0.2em;
@@ -18,16 +19,19 @@ body{
     text-transform: uppercase;
 }
 
-.my_footer{
+/* footer */
+
+/* .my_footer{
     background-color: rgb(245, 167, 139);
     height: 100px;
+    
 }
 
 .my_footer p{
     font-weight: bold;
     padding-top: 40px;
     width: 100%;
-}
+} */
 
 
 /* category */

@@ -43,9 +43,10 @@ BeautyFinds card
                 {% for cart_items in cart_items %}
                 <tr>
                     <td>
-                        <a href="cart_items.product.get_absolute_url">
+                        <a href="">
                             <img src="{{cart_items.product.image.url}}" alt="" style="width: 100px; height: 100px;" class="rounded float-left custom_image">
                         </a>
+                        <!-- cart_items.product.get_absolute_url -->
                     </td>
                     <td class="text-left">
                         {{cart_items.product.name}}
@@ -107,7 +108,9 @@ BeautyFinds card
                 </tr>
             </tbody>
         </table>
+        
         <div class="mx-auto">
+            <a href="{% url 'shop:alllist' %}" class="btn btn-success custom_button mb-5">Proceed to pay</a>
             <a href="{% url 'shop:alllist' %}" class="btn btn-dark custom_button mb-5" >Continue shopping</a>
         </div>
     </div>
